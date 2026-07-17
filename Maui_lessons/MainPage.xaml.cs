@@ -7,7 +7,7 @@ namespace Maui_lessons
     {
         // свойство ObservableCollection позволяет автоматически обновлять интерфейс при изменении коллекции
         //  и Items становится источником данных для CarouselView(xaml).
-        public ObservableCollection<Carousel> Items { get; set; } 
+        public List<Carousel> Items { get; set; } 
         
 
         public MainPage()
@@ -15,7 +15,7 @@ namespace Maui_lessons
             InitializeComponent();
 
             // установка контекста данных для привязки
-            Items = new ObservableCollection<Carousel> 
+            Items = new List<Carousel> 
             { 
                 new Carousel { Title = "Item 1" },
                 new Carousel { Title = "Item 2" },
