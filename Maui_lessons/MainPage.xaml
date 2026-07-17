@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui_lessons.MainPage">
+
+    <ScrollView>
+
+
+        <!-- Карусель -->
+
+        <!-- ItemsSource="{Binding Items}" → берёт коллекцию Items из MainPage.-->   
+        <CarouselView ItemsSource="{Binding Items}"                      
+                      HorizontalOptions="Fill"
+                      VerticalOptions="Fill">
+            
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Label Text="{Binding Title}"
+                               FontSize="18"
+                               HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+            
+        </CarouselView>
+
+
+
+    </ScrollView>
+
+</ContentPage>
