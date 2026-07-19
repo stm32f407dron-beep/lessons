@@ -6,27 +6,34 @@
     <ScrollView>
 
 
-        <!-- Карусель -->
+        <VerticalStackLayout>
 
-        <!-- ItemsSource="{Binding Items}" → берёт коллекцию Items из MainPage.-->   
-        <CarouselView ItemsSource="{Binding Items}"                      
+            <!-- Карусель -->
+
+          <!-- ItemsSource="{Binding Items}" → берёт коллекцию Items из MainPage.-->   
+          <CarouselView ItemsSource="{Binding Items}"                      
                       HorizontalOptions="Fill"
                       VerticalOptions="Fill">
-            
-            <CarouselView.ItemTemplate>
-                <DataTemplate>
-                    <VerticalStackLayout>
-                        <Label Text="{Binding Title}"
-                               FontSize="18"
-                               HorizontalOptions="Center" />
-                    </VerticalStackLayout>
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-            
-        </CarouselView>
+
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Title}"
+                                   FontSize="18"
+                                   HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>    
+
+            </CarouselView>
 
 
+           <!-- Кнопка -->
+            <Button Text="Press Start"
+                Clicked="OnStartClicked"/>
 
+
+        </VerticalStackLayout>
     </ScrollView>
 
 </ContentPage>

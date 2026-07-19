@@ -29,7 +29,20 @@ namespace Maui_lessons
             BindingContext = this;
         }
 
-       
+
+        private void OnStartClicked(object sender, EventArgs e)
+        {
+            // пример изменения свойства — Binding сразу обновит UI
+            Items[0].Title = "Item 1 (Updated)";
+        }
+
+
+
+
+
+
+
+
     }
 
 
@@ -42,35 +55,36 @@ namespace Maui_lessons
         private string? title;
 
         // свойство Title с уведомлением об изменении
-        public string? Title { get; set; }
+        //public string? Title { get; set; }
 
-        //public string? Title 
-        //{
-           
-        //    get { return title;}
+        public string? Title
+        {
 
-
-
-        //    set
-        //    {
-
-        //        if (title != value)
-        //        {
-        //            title = value;
-        //            OnPropertyChanged(nameof(Title)); // уведомляем Binding
-
-        //        }
+            get { return title; }
 
 
-        //    }
 
-        //}
+            set
+            {
+
+                if (title != value)
+                {
+                    title = value;
+                    OnPropertyChanged(nameof(Title)); // уведомляем Binding
+
+                }
 
 
-        //protected void OnPropertyChanged(string propertyName)
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
+            }
+
+        }
+
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            //Подписчиком обычно является система Binding в MAUI
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
 
     }
