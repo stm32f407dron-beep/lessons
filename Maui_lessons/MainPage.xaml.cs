@@ -1,5 +1,6 @@
-﻿using System.ComponentModel;
+﻿using Maui_lessons;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace Maui_lessons
 {
@@ -93,9 +94,60 @@ namespace Maui_lessons
 }
 
 
+
+
+
+
 //🔎 Механика
 //При создании объектов (new Carousel { Title = "Item 1" }) → сеттер сохраняет значение в поле title.
 //Это одноразовая запись при инициализации.
 
 //При листании карусели → используется только геттер (get { return title; }), чтобы прочитать уже сохранённое значение.
 //Сеттер тут не трогается.
+
+
+
+//✅ Итог
+//Источник данных: Items в MainPage.
+
+//Объекты данных: Carousel с Title.
+
+//Исполняемый класс: MainPage.xaml + кнопка.
+
+//Механизм обновления: изменение Title → событие PropertyChanged → Binding обновляет UI.
+
+
+
+
+
+
+
+
+
+//📌 Общая схема
+//У нас есть три ключевых уровня:
+
+// 1 Исполняемый класс(View)
+
+//MainPage: ContentPage — это страница в MAUI, где есть XAML и кнопка.
+
+//Здесь задаётся BindingContext = this;, то есть сама страница становится источником данных для привязки.
+
+
+// 2 Класс‑источник данных (ViewModel / DataContext)
+
+//В твоём случае это свойство Items внутри MainPage.
+
+//Оно содержит коллекцию объектов Carousel.
+
+//Именно Items используется как источник данных для CarouselView в XAML.
+
+
+
+// 3  Класс‑объект (Model)
+
+//Carousel — отдельный класс, который реализует INotifyPropertyChanged.
+
+//У него есть свойство Title.
+
+//Когда Title меняется, вызывается OnPropertyChanged(nameof(Title)), и система Binding обновляет UI.
