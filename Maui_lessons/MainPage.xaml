@@ -28,7 +28,7 @@
             </CarouselView>
 
 
-           <!-- Кнопка -->
+             <!-- Кнопка -->
             <Button Text="Press Start"
                 Clicked="OnStartClicked"/>
 
