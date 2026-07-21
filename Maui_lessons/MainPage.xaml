@@ -23,7 +23,7 @@
                             <!-- Картинка -->
                             <Image Source="{Binding ImagePath}"
                                Aspect="AspectFit"
-                               HeightRequest="200"
+                               HeightRequest="290"
                                WidthRequest="200"
                                HorizontalOptions="Center" />
 

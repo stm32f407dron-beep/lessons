@@ -8,7 +8,7 @@ namespace Maui_lessons
     {
         // свойство ObservableCollection позволяет автоматически обновлять интерфейс при изменении коллекции
         //  и Items становится источником данных для CarouselView(xaml).
-        public List<Carousel> Items { get; set; } 
+        public List<Models.Carousel> Items { get; set; } 
         
 
         public MainPage()
@@ -16,11 +16,11 @@ namespace Maui_lessons
             InitializeComponent();
 
             // установка контекста данных для привязки
-            Items = new List<Carousel> 
+            Items = new List<Models.Carousel> 
             { 
-                new Carousel { Title = "Item 1", ImagePath = "fon.jpg" },
-                new Carousel { Title = "Item 2" ,ImagePath = "varta.jpg" },
-                new Carousel { Title = "Item 3" ,ImagePath = "v_832.jpg" },
+                new Models.Carousel { Title = "Item 1", ImagePath = "fon.jpg" },
+                new Models.Carousel { Title = "Item 2" ,ImagePath = "varta.jpg" },
+                new Models.Carousel { Title = "Item 3" ,ImagePath = "v_832.jpg" },
 
             };
 
@@ -47,51 +47,51 @@ namespace Maui_lessons
     }
 
 
-    public class Carousel : INotifyPropertyChanged
-    {
-        // реализация интерфейса INotifyPropertyChanged для уведомления об изменении свойств
+    //public class Carousel : INotifyPropertyChanged
+    //{
+    //    // реализация интерфейса INotifyPropertyChanged для уведомления об изменении свойств
         
-        public event PropertyChangedEventHandler? PropertyChanged;
-        // поле для хранения значения свойства Title
-        private string? title;
+    //    public event PropertyChangedEventHandler? PropertyChanged;
+    //    // поле для хранения значения свойства Title
+    //    private string? title;
 
-        public string? ImagePath { get; set; } // путь к картинке или URL
-
-
-        // свойство Title с уведомлением об изменении
-        //public string? Title { get; set; }
-
-        public string? Title
-        {
-
-            get { return title; }
+    //    public string? ImagePath { get; set; } // путь к картинке или URL
 
 
+    //    // свойство Title с уведомлением об изменении
+    //    //public string? Title { get; set; }
 
-            set
-            {
+    //    public string? Title
+    //    {
 
-                if (title != value)
-                {
-                    title = value;
-                    OnPropertyChanged(nameof(Title)); // уведомляем Binding
-
-                }
+    //        get { return title; }
 
 
-            }
 
-        }
+    //        set
+    //        {
+
+    //            if (title != value)
+    //            {
+    //                title = value;
+    //                OnPropertyChanged(nameof(Title)); // уведомляем Binding
+
+    //            }
 
 
-        protected void OnPropertyChanged(string propertyName)
-        {
-            //Подписчиком обычно является система Binding в MAUI
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+    //        }
+
+    //    }
 
 
-    }
+    //    protected void OnPropertyChanged(string propertyName)
+    //    {
+    //        //Подписчиком обычно является система Binding в MAUI
+    //            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    //    }
+
+
+    //}
 
 
 }
