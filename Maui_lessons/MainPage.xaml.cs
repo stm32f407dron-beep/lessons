@@ -18,9 +18,9 @@ namespace Maui_lessons
             // установка контекста данных для привязки
             Items = new List<Carousel> 
             { 
-                new Carousel { Title = "Item 1" },
-                new Carousel { Title = "Item 2" },
-                new Carousel { Title = "Item 3" },
+                new Carousel { Title = "Item 1", ImagePath = "fon.jpg" },
+                new Carousel { Title = "Item 2" ,ImagePath = "varta.jpg" },
+                new Carousel { Title = "Item 3" ,ImagePath = "v_832.jpg" },
 
             };
 
@@ -54,6 +54,9 @@ namespace Maui_lessons
         public event PropertyChangedEventHandler? PropertyChanged;
         // поле для хранения значения свойства Title
         private string? title;
+
+        public string? ImagePath { get; set; } // путь к картинке или URL
+
 
         // свойство Title с уведомлением об изменении
         //public string? Title { get; set; }

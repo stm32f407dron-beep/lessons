@@ -18,6 +18,17 @@
                             <Label Text="{Binding Title}"
                            FontSize="18"
                            HorizontalOptions="Center" />
+
+
+                            <!-- Картинка -->
+                            <Image Source="{Binding ImagePath}"
+                               Aspect="AspectFit"
+                               HeightRequest="200"
+                               WidthRequest="200"
+                               HorizontalOptions="Center" />
+
+
+
                         </VerticalStackLayout>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
